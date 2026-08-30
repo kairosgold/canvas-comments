@@ -1,0 +1,332 @@
+.canvas-comments-marker-layer {
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 100;
+}
+
+.canvas-comments-marker {
+  align-items: center;
+  background: #7c3aed;
+  border: 4px solid var(--background-primary);
+  border-radius: 999px;
+  box-shadow: 0 4px 18px rgb(0 0 0 / 34%);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  font-size: 15px;
+  font-weight: 650;
+  height: 42px;
+  justify-content: center;
+  padding: 0;
+  pointer-events: auto;
+  position: absolute;
+  transform: translate(-52%, -48%);
+  transition: box-shadow 120ms ease, transform 120ms ease;
+  width: 42px;
+}
+
+.canvas-comments-marker.is-cluster {
+  background: #292929;
+  border-width: 3px;
+  font-size: 18px;
+  height: 64px;
+  min-width: 64px;
+  padding: 0 12px;
+  width: auto;
+}
+
+.canvas-comments-marker:hover,
+.canvas-comments-marker:focus-visible {
+  box-shadow: 0 6px 24px rgb(0 0 0 / 45%);
+  transform: translate(-52%, -48%) scale(1.07);
+}
+
+.canvas-comments-marker:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 3px;
+}
+
+.canvas-comments-marker__count,
+.canvas-comments-marker__icon {
+  line-height: 1;
+}
+
+.canvas-comments-marker__icon,
+.canvas-comments-marker__icon svg {
+  height: 20px;
+  width: 20px;
+}
+
+.canvas-comments-tooltip {
+  background: #2b2b2b;
+  border: 1px solid rgb(255 255 255 / 8%);
+  border-radius: 22px;
+  box-shadow: 0 12px 36px rgb(0 0 0 / 42%);
+  color: #f4f4f5;
+  max-width: 420px;
+  min-width: 260px;
+  padding: 18px 20px;
+  pointer-events: none;
+  position: fixed;
+  z-index: var(--layer-popover, 1000);
+}
+
+.canvas-comments-tooltip__row,
+.canvas-comments-comment,
+.canvas-comments-composer {
+  align-items: flex-start;
+  display: flex;
+  gap: 14px;
+}
+
+.canvas-comments-tooltip__body,
+.canvas-comments-comment__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.canvas-comments-tooltip__meta,
+.canvas-comments-comment__meta {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 7px;
+}
+
+.canvas-comments-tooltip__time,
+.canvas-comments-comment__time {
+  color: #a1a1aa;
+}
+
+.canvas-comments-tooltip__text,
+.canvas-comments-comment__text {
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.canvas-comments-tooltip__summary {
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #a1a1aa;
+  font-size: 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+}
+
+.canvas-comments-thread-modal.modal,
+.canvas-comments-manager-modal.modal,
+.canvas-comments-cluster-modal.modal {
+  background: #292929;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 24px;
+  color: #f4f4f5;
+  max-width: min(720px, calc(100vw - 32px));
+  padding: 0;
+  width: 720px;
+}
+
+.canvas-comments-thread-modal .modal-close-button,
+.canvas-comments-manager-modal .modal-close-button,
+.canvas-comments-cluster-modal .modal-close-button {
+  display: none;
+}
+
+.canvas-comments-thread-modal .modal-content,
+.canvas-comments-manager-modal .modal-content,
+.canvas-comments-cluster-modal .modal-content {
+  padding: 0;
+}
+
+.canvas-comments-thread__header,
+.canvas-comments-manager__header {
+  align-items: center;
+  border-bottom: 1px solid rgb(255 255 255 / 12%);
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 24px;
+}
+
+.canvas-comments-thread__header h2,
+.canvas-comments-manager__header h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.canvas-comments-thread__header-actions {
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
+
+.canvas-comments-thread__header .clickable-icon,
+.canvas-comments-manager__header .clickable-icon,
+.canvas-comments-comment__more {
+  color: #f4f4f5;
+}
+
+.canvas-comments-thread__quote {
+  background: rgb(245 197 24 / 12%);
+  border-left: 3px solid #f5c518;
+  color: #e4e4e7;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 18px 24px 0;
+  max-height: 110px;
+  overflow: auto;
+  padding: 10px 12px;
+  white-space: pre-wrap;
+}
+
+.canvas-comments-thread__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-height: min(50vh, 480px);
+  overflow-y: auto;
+  padding: 24px 32px;
+}
+
+.canvas-comments-thread__empty,
+.canvas-comments-manager__empty {
+  color: #a1a1aa;
+  padding: 30px;
+  text-align: center;
+}
+
+.canvas-comments-comment__more {
+  margin-left: auto;
+}
+
+.canvas-comments-composer {
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  margin: 0 24px;
+  padding: 20px 8px 24px;
+}
+
+.canvas-comments-composer textarea {
+  background: #373737;
+  border: 2px solid #168cff;
+  border-radius: 20px;
+  box-sizing: border-box;
+  color: #f4f4f5;
+  flex: 1;
+  min-height: 72px;
+  padding: 16px 54px 16px 18px;
+  resize: vertical;
+}
+
+.canvas-comments-composer__send {
+  align-items: center;
+  align-self: center;
+  background: #737373;
+  border: 0;
+  border-radius: 999px;
+  color: #202020;
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  margin-left: -62px;
+  width: 42px;
+}
+
+.canvas-comments-thread__resolved-note {
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  color: #a1a1aa;
+  padding: 18px 24px 24px;
+}
+
+.canvas-comments-manager__list,
+.canvas-comments-cluster__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 60vh;
+  overflow: auto;
+  padding: 16px;
+}
+
+.canvas-comments-manager__row {
+  align-items: center;
+  background: rgb(255 255 255 / 4%);
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+}
+
+.canvas-comments-manager__main,
+.canvas-comments-cluster__row {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  flex: 1;
+  min-width: 0;
+  text-align: left;
+}
+
+.canvas-comments-manager__label,
+.canvas-comments-cluster__label {
+  color: #a1a1aa;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.canvas-comments-manager__preview,
+.canvas-comments-cluster__preview {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.canvas-comments-cluster-modal h2 {
+  margin: 0;
+  padding: 22px 24px 8px;
+}
+
+.canvas-comments-cluster__row {
+  align-items: center;
+  border-radius: 12px;
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+.canvas-comments-cluster__row:hover {
+  background: rgb(255 255 255 / 6%);
+}
+
+.canvas-comments-cluster__text {
+  min-width: 0;
+}
+
+.canvas-comments-text-highlight {
+  background: rgb(245 197 24 / 34%);
+  border-bottom: 2px solid #f5c518;
+  border-radius: 2px;
+  cursor: pointer;
+  padding-bottom: 1px;
+}
+
+.canvas-comments-text-highlight:hover {
+  background: rgb(245 197 24 / 48%);
+}
+
+@media (max-width: 620px) {
+  .canvas-comments-thread__list {
+    padding: 20px;
+  }
+
+  .canvas-comments-composer {
+    margin: 0 14px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .canvas-comments-marker {
+    transition: none;
+  }
+}
